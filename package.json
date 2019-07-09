@@ -1,11 +1,22 @@
 {
   "name": "day-organizer",
   "version": "1.0.0",
-  "description": "",
+  "description": "To Do APP - Week2 - [Mohammed-Q , Fares , Asmaa, Fadi]",
   "main": "dom.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G7/DayOrganizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GSG-G7/DayOrganizer/issues"
+  },
+  "homepage": "https://github.com/GSG-G7/DayOrganizer#readme",
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
 }
