@@ -1,14 +1,93 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #bdc3c7;
+}
+
+.formStyle{
+    margin: 50px auto;
+    text-align: center
+}
+
+.inputStyle{
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: rgba(256, 256, 256, .7);
+    width: 40%
+}
+.submitStyle{
+    margin: 0 10px;
+}
+.submitStyle, .sortStyle{
+    padding: 10px 18px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 10%;
+    background-color: #636e72;
+    cursor: pointer;
+    color: #fff
+}
+
+
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    margin: 0 auto
+}
+
+
+
+ul li{
+    text-align: center;
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 .spanStyle {
-    height: 50px;
-    width:50px;
-    background-color: blue
+    display: inline-block;
+    min-height: 40px;
+    padding: 0 15px;
+    line-height: 40px;
+    width: 58%;
+    background-color: #192a56;
+    overflow: hidden;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold
+
 }
+
+
 .deleteStyle{
-    /* width:30px; 
-    height: 30px ; */
-    background-color:red;
+    background-color:#e74c3c;
+    width: 19%;
+    border-radius: 5px;
+    border : 2px solid transparent;
+    cursor: pointer;
+    color: white;
+    font-weight: bold
 }
+
 .markStyle{
-    background-color:green;
-    
+    background-color:#27ae60;
+    width: 19%;
+    border-radius: 5px;
+    border : 2px solid transparent;
+    cursor: pointer;
+    color: white;
+    font-weight: bold
+}
+
+.nodelistStyle{
+    background-color: grey;
+    padding: 10px
+
 }
