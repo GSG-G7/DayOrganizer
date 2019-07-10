@@ -55,10 +55,10 @@
     todoNode.appendChild(markToDoButton);
 
     if (todo.done) {
-      spanNode.classList.add('markStyle');
+      //spanNode.classList.add('markStyle');
       todoNode.classList.add('nodelistStyle');
     } else {
-      spanNode.classList.remove('markStyle');
+      //spanNode.classList.remove('markStyle');
       todoNode.classList.remove('nodelistStyle');
     }
     return todoNode;
