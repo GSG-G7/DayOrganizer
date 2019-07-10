@@ -1,0 +1,14 @@
+.spanStyle {
+    height: 50px;
+    width:50px;
+    background-color: blue
+}
+.deleteStyle{
+    /* width:30px; 
+    height: 30px ; */
+    background-color:red;
+}
+.markStyle{
+    background-color:green;
+    
+}
