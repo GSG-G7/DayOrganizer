@@ -2,10 +2,10 @@
 To Do APP For Organizing Dialy Tasks .
 
 ## TEAM NAMES:
-- Fadi ElAmassi
 - Fares ElHelo
 - Mohameed Qarmout
 - Asmaa Thabet
+- Fadi ElAmassi
 
 
 ## User stories
@@ -27,7 +27,7 @@ We divided our project to **four main parts**
 
 3- Add The Style for Our App by writing the  Suitable styles in style.css file.
  
-4- configure Web Storage settings . 
+4-  check Resposibility and Accessibility 
 
 
 
