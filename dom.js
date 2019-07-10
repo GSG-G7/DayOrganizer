@@ -33,7 +33,15 @@
     spanNode.classList = 'spanStyle';
     spanNode.textContent = todo.description;
     todoNode.appendChild(spanNode);
+    spanNode.addEventListener("click", toggleModal);
 
+    spanNode.addEventListener('click', function(event){
+      // event.target.textContent;
+      // console.log(event.target.textContent)
+      document.querySelector("#popUpText").textContent = event.target.textContent;
+    })
+
+    
     // this adds the delete button
     var deleteButtonNode = document.createElement("button");
     deleteButtonNode.classList = 'deleteStyle';
@@ -55,11 +63,17 @@
     todoNode.appendChild(markToDoButton);
 
     if (todo.done) {
-      spanNode.classList.add('markStyle');
+      // spanNode.classList.add('markStyle');
       todoNode.classList.add('nodelistStyle');
+      markToDoButton.classList.add('complete');
+      markToDoButton.textContent = 'Complete';
+
     } else {
-      spanNode.classList.remove('markStyle');
+      // spanNode.classList.remove('markStyle');
       todoNode.classList.remove('nodelistStyle');
+      markToDoButton.classList.remove('complete');
+      markToDoButton.textContent = 'Not Complete';
+
     }
     return todoNode;
   };
@@ -108,3 +122,37 @@
 
   if (container) renderState(state);
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*====================================================== */
+var modal = document.querySelector(".modal");
+var closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+    modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+    if (event.target === modal) {
+        toggleModal();
+    }
+}
+
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+
+
+
