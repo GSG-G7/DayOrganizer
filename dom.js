@@ -37,7 +37,7 @@
       var newState = todoFunctions.markTodo(state, todo.id);
       update(newState);
     });
-     todoNode.appendChild(markToDoButton);     
+     todoNode.appendChild(markToDoButton); 
     return todoNode;
   };
 
