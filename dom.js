@@ -105,7 +105,6 @@
    }
    var toogleSort = true;
    inputSort.addEventListener('click', function(event) {
-      update(todoFunctions.sortTodos(state, sort));
       console.log(toogleSort);
       event.preventDefault();
       var sort;
