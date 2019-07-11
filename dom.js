@@ -94,31 +94,37 @@
          if (/[A-Z-a-z]/.test(description)) {
             description = document.querySelector('#add-todo input[type = text]')
                .value;
-            var newState = todoFunctions.addTodo(state, description); // ?? change this!
+            var newState = todoFunctions.addTodo(state, description); // ! change this!
             state.push(newState);
             update(newState);
             document.querySelector('#add-todo input[type = text]').value = '';
          } else {
             alert('Enter Your Task');
          }
-         console.log(state);
-      });
-      inputSort.addEventListener('click',function(event) {
-         //alert('hi');
-         // console.log(b);
-         // return b.id - a.id;
-          
-         event.preventDefault();
-   
-         function sort(a, b) {
-            // console.log(a.id);           
-            // return b.id - a.id;
-            return a.id - b.id
-         }
-         todoFunctions.sortTodos(state, sort);
-         update(state);
       });
    }
+   var toogleSort = true;
+   inputSort.addEventListener('click', function(event) {
+      update(todoFunctions.sortTodos(state, sort));
+      console.log(toogleSort);
+      event.preventDefault();
+      var sort;
+      if (toogleSort) {
+         sort = function sort(x, y) {
+            return x.done === y.done ? 0 : x ? -1 : 1;
+         };
+         toogleSort = false;
+      } 
+      else if (!toogleSort) {
+         console.log('inside else if ');
+         sort = function sort(x, y) {
+            return x.done === y.done ?  0: x ? 1 : -1;
+         };
+         toogleSort = true;
+      }
+
+      update(todoFunctions.sortTodos(state, sort));
+   });
 
    // you should not need to change this function
    var update = function(newState) {
