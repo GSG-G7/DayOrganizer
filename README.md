@@ -11,7 +11,7 @@ To Do APP For Organizing Dialy Tasks .
 ![](https://files.gitter.im/fares98/7WwE/Screenshot-_471_.png)
 
 ## How ? 
-We divided our project to **six main parts:** 
+We divided our project to **seven main parts:** 
 
 1- Sketch the main Layout for The APP (inputs ,buttons ,colors , Image).
 
