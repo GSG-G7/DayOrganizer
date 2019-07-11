@@ -153,6 +153,27 @@ inputEdits.addEventListener("click", toggleModal);
 
     });
   }
+  var toogleSort = true;
+   inputSort.addEventListener('click', function(event) {
+      console.log(toogleSort);
+      event.preventDefault();
+      var sort;
+      if (toogleSort) {
+         sort = function sort(x, y) {
+            return x.done === y.done ? 0 : x ? -1 : 1;
+         };
+         toogleSort = false;
+      } 
+      else if (!toogleSort) {
+         console.log('inside else if ');
+         sort = function sort(x, y) {
+            return x.done === y.done ?  0: x ? 1 : -1;
+         };
+         toogleSort = true;
+      }
+
+      update(todoFunctions.sortTodos(state, sort));
+   });
 
   // you should not need to change this function
   var update = function (newState) {
@@ -174,17 +195,6 @@ inputEdits.addEventListener("click", toggleModal);
 
   if (container) renderState(state);
 })();
-
-
-
-
-
-
-
-
-
-
-
 
 
 
