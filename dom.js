@@ -4,6 +4,10 @@
 
 
 (function () {
+    document.querySelector('html').setAttribute('lang', 'en');
+    document.querySelector("#add-todo input[type = text]").setAttribute('aria-label', 'a')
+
+
   // This is the dom node where we will keep our todo
   var container = document.getElementById("todo-container");
   var addTodoForm = document.getElementById("add-todo");
@@ -21,7 +25,17 @@
 
 /*==================================================================================*/
   
-  var state = []; // this is our initial todoList
+/*===================== Create A Head For The Page & Some Edits=====================*/
+document.querySelector("#add-todo input[type = text]").setAttribute('placeholder', 'Enter Your Task Here');
+var heading = document.createElement('h1');
+  heading.textContent = '(: Day Organizer :)'
+  heading.classList = 'heading';
+
+  var page = document.querySelector('body');
+  page.insertBefore(heading, addTodoForm);
+/*==================================================================================*/
+  
+var state = []; // this is our initial todoList
 
   // This function takes a todo, it returns the DOM node representing that todo
   var createTodoNode = function (todo) {
@@ -61,6 +75,44 @@
       update(newState);
     });
     todoNode.appendChild(markToDoButton);
+    /*======================================= Create Edit Button======================================*/
+var inputEdits = document.createElement('button');
+inputEdits.textContent = 'Edit'
+inputEdits.classList = 'editStyle';
+
+var formEdits = document.createElement('input');
+formEdits.setAttribute('type', 'text');
+formEdits.setAttribute('placeholder', 'Enter Your Edits');
+formEdits.classList = 'formEdits';
+
+var accept = document.createElement('button');
+accept.textContent = 'ACCEPT'
+accept.classList = 'acceptButton';
+
+var contentForEdit;
+inputEdits.addEventListener("click", function (event) {
+  document.querySelector('#popUpText').innerHTML = '';
+  document.querySelector('#popUpText').appendChild(formEdits);
+  document.querySelector('#popUpText').appendChild(accept);
+  contentForEdit = event.target.parentNode.firstChild;
+  update(newState);
+
+});
+todoNode.appendChild(inputEdits);
+accept.addEventListener('click', function(event) {
+  if(/[A-Z-a-z]/.test(formEdits.value)){
+    contentForEdit.textContent = formEdits.value;
+    update(newState);
+    document.querySelector('#add-todo input[type = text]').value = ''
+  }else{
+    alert('Wrong Value')
+  }
+  
+
+});
+accept.addEventListener("click", toggleModal);
+inputEdits.addEventListener("click", toggleModal);
+/* ============================================================================================= */
 
     if (todo.done) {
       // spanNode.classList.add('markStyle');
